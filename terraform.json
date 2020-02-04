@@ -1,0 +1,54 @@
+{
+	"ECS Container Definition": {
+		"prefix": "ecscontainerdef",
+		"body": [
+			"{",
+			"            \"cpu\": ${1:container cpu units},",
+			"            \"environment\": [",
+			"            ],            ",
+			"            \"essential\": ${4|true,false|},",
+			"            \"image\": \"${5:image name}\",",
+			"            \"logConfiguration\": {",
+			"                \"logDriver\": \"awslogs\",",
+			"                \"options\": {",
+			"                    \"awslogs-group\": \"/ecs/${6:log group name}\",",
+			"                    \"awslogs-region\": \"${7:log group region}\",",
+			"                    \"awslogs-stream-prefix\": \"ecs\"",
+			"                }",
+			"            },",
+			"            \"memory\": ${8:container memory units},",
+			"            \"mountPoints\": [],",
+			"            \"name\": \"${9:container name}\",",
+			"            \"portMappings\": [{",
+			"                \"containerPort\": ${10:container port},",
+			"                \"hostPort\": ${11:host port},",
+			"                \"protocol\": \"${12:protocol}\"",
+			"            }],",
+			"            \"secrets\": [",
+			"            ],",
+			"            \"volumesFrom\": []",
+			"        }"
+		],
+		"description": ""
+	},
+	"ECS Container Secret": {
+		"prefix": "ecscontainersecret",
+		"body": [
+			"{",
+			"    \"valueFrom\": \"${1:value from}\"",
+			"    \"name\": \"${2:name}\"",
+			"}"
+		],
+		"description": ""
+  },
+  "ECS Container Environment Variable": {
+		"prefix": "ecscontainerenvvariable",
+		"body": [
+			"{",
+			"    \"value\": \"${1:value}\"",
+			"    \"name\": \"${2:name}\"",
+			"}"
+		],
+		"description": ""
+	}
+}
