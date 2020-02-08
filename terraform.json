@@ -40,13 +40,53 @@
 			"}"
 		],
 		"description": ""
-  },
-  "ECS Container Environment Variable": {
+	},
+	"ECS Container Environment Variable": {
 		"prefix": "ecscontainerenvvariable",
 		"body": [
 			"{",
 			"    \"value\": \"${1:value}\"",
 			"    \"name\": \"${2:name}\"",
+			"}"
+		],
+		"description": ""
+	},
+	"AWS Role Policy": {
+		"prefix": "awspolicy",
+		"body": [
+			"{",
+			"  \"Version\":\"2012-10-17\",",
+			"  \"Statement\":[",
+			"    {",
+			"      \"Effect\":\"Allow\",",
+			"      \"Action\":[",
+			"        \"ses:SendEmail\",",
+			"        \"ses:SendRawEmail\"",
+			"      ],",
+			"      \"Resource\": [",
+			"        \"arn:aws:ses:us-east-1:${data.aws_caller_identity.current.account_id}:identity/${var.verified_email_address}\"",
+			"      ]",
+			"    }",
+			"  ]",
+			"}"
+		],
+		"description": ""
+	},
+	"AWS Assume Role Policy": {
+		"prefix": "awspolicyassumerole",
+		"body": [
+			"{",
+			"  \"Version\": \"2012-10-17\",",
+			"  \"Statement\": [",
+			"      {",
+			"      \"Action\": \"sts:AssumeRole\",",
+			"      \"Principal\": {",
+			"          \"Service\": [\"${1|codedeploy.amazonaws.com,ecs-tasks.amazonaws.com,ecs.amazonaws.com,ec2.amazonaws.com,lambda.amazonaws.com,events.amazonaws.com,logs.amazonaws.com,kinesis.amazonaws.com|}\"]",
+			"      },",
+			"      \"Effect\": \"Allow\",",
+			"      \"Sid\": \"\"",
+			"      }",
+			"  ]",
 			"}"
 		],
 		"description": ""
