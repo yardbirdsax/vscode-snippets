@@ -1,0 +1,23 @@
+{
+	"error_exit": {
+		"prefix": "error_exit",
+		"body": [
+			"error_exit() {",
+			"  echo \"ERROR: \\$1\"",
+			"  exit 1",
+			"}"
+		],
+		"description": ""
+	},
+	"error_check": {
+		"prefix": "error_check",
+		"body": [
+			"if [[ $? -ne 0 ]] ",
+			"then",
+			"  error_exit \"$1\"",
+			"fi",
+			"$0"
+		],
+		"description": ""
+	}
+}
