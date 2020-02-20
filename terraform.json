@@ -35,7 +35,7 @@
 		"prefix": "ecscontainersecret",
 		"body": [
 			"{",
-			"    \"valueFrom\": \"${1:value from}\"",
+			"    \"valueFrom\": \"${1:value from}\",",
 			"    \"name\": \"${2:name}\"",
 			"}"
 		],
@@ -45,7 +45,7 @@
 		"prefix": "ecscontainerenvvariable",
 		"body": [
 			"{",
-			"    \"value\": \"${1:value}\"",
+			"    \"value\": \"${1:value}\",",
 			"    \"name\": \"${2:name}\"",
 			"}"
 		],
