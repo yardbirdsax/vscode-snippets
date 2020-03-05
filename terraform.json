@@ -90,5 +90,25 @@
 			"}"
 		],
 		"description": ""
+	},
+	"awsregionnamevar": {
+		"body": [
+			"variable aws_region_name {",
+			"  type = string",
+			"  default = \"us-east-2\"",
+			"  description = \"The AWS region where resources are deployed.\"",
+			"}"
+		]
+	},
+	"AWS Region Name variable block": {
+		"prefix": "awsregionnamevar",
+		"body": [
+			"variable aws_region_name {",
+			"  type = string",
+			"  default = \"us-east-2\"",
+			"  description = \"The AWS region where resources are deployed.\"",
+			"}"
+		],
+		"description": ""
 	}
 }
