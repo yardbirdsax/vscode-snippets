@@ -81,7 +81,7 @@
 			"      {",
 			"      \"Action\": \"sts:AssumeRole\",",
 			"      \"Principal\": {",
-			"          \"Service\": [\"${1|codedeploy.amazonaws.com,ecs-tasks.amazonaws.com,ecs.amazonaws.com,ec2.amazonaws.com,lambda.amazonaws.com,events.amazonaws.com,logs.amazonaws.com,kinesis.amazonaws.com,monitoring.rds.amazonaws.com,rds.amazonaws.com|}\"]",
+			"          \"Service\": [\"${1|codebuild.amazonaws.com,codedeploy.amazonaws.com,ecs-tasks.amazonaws.com,ecs.amazonaws.com,ec2.amazonaws.com,lambda.amazonaws.com,events.amazonaws.com,logs.amazonaws.com,kinesis.amazonaws.com,monitoring.rds.amazonaws.com,rds.amazonaws.com|}\"]",
 			"      },",
 			"      \"Effect\": \"Allow\",",
 			"      \"Sid\": \"\"",
